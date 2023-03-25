@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<div th:fragment="card(movie)"
+	th:with="stripe = ${movie.rank} % 2 == 0 ? ' bg-white ' : ' bg-gray-100 '"
+	class="flex justify-between" th:classappend="${stripe}">
+	<div class="flex justify-start items-center">
+		<img id="img1" onclick="buyut()"  class="h-min" alt="" th:src="${movie.image}" height="67" width="45"> 
+		<span
+		 	class="h-min"
+			th:text="${movie.rank} + '. '"></span> 
+			<a
+			 class="h-min"
+			th:href="@{/movies/title/{id} (id = ${movie.id}) }"
+			th:text="${movie.title}"></a> 
+			<span
+			 class="h-min"
+			th:text=" '(' + ${movie.year} + ')'"></span>
+	</div>
+	<div class="flex flex-col justify-center">
+		<span class="h-min" th:text="'★ ' + ${movie.imDbRating}"></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function buyut(){
+		let img = document.getElementById('img1')
+		img.style.height = 100
+	}
+</script>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragments/head.html :: head('Home') }"></head>
+<body>
+	<div th:replace="~{fragments/navbar.html :: header}"></div>
+	<div class="w-3/6 mx-auto">
+		<div th:each="movie : ${movies}">
+			<div th:replace="~{fragments/movieCard.html :: card( ${movie} )}"></div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	function buyut(){
+		console.log('Týklandý')
+		let img = document.getElementById('img1')
+		img.style.height = "100px"
+	}
+</script>
+</body>
+</html>

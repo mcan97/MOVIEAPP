@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+	<header 
+		th:fragment="header"
+		class="p-2 bg-stone-900 text-white flex justify-between">
+		<div>
+			<span th:insert="~{fragments/icons.html :: logo}"></span>
+		</div>
+		<div>Search</div>
+		<div>Options</div>
+	</header>
+
+</html>
